@@ -15,21 +15,21 @@ const OurWork = () => {
          <StMovie>
             <h2>The Athlete</h2> 
             <div className="line"></div>
-            <Link>
+            <Link to='/work/the-athlete'>
                <img src={athlete} alt='Athlete'/>
             </Link>
          </StMovie>
          <StMovie>
             <h2>The Racer</h2> 
             <div className="line"></div>
-            <Link>
+            <Link to='/work/the-racer'>
                <img src={theracer} alt='Racer'/>
-            </Link>
+            </Link >
          </StMovie>
          <StMovie>
             <h2>Good Times</h2> 
             <div className="line"></div>
-            <Link>
+            <Link to='/work/good-times'>
                <img src={goodtimes} alt='Good times'/>
             </Link>
          </StMovie>
@@ -52,6 +52,11 @@ const StMovie  = styled.div `
       height: 0.5rem;
       background: #cccccc;
       margin-bottom: 3rem;
+   }
+
+   h2{
+      font-size: 2rem;
+      color: #23d997;
    }
 
    img{
