@@ -1,31 +1,37 @@
 import React from 'react'
 import home1 from '../img/home1.png'
 //styled-components
-import styled from 'styled-components';
 import { StAbout, StHide, StImage, StDescription } from './../style';
+//framer-motion
+import { motion } from 'framer-motion';
+import { titleAnim, fade, photoAnim} from '../animation';
+
+import Wave from './Wave';
+
 
 
 const AboutUsSection = () => {
    return (
       <StAbout>
          <StDescription>
-            <div className="title">
+            <motion.div>
                <StHide>
-                  <h2>We work to make</h2>
+                  <motion.h2 variants={titleAnim}>We work to make</motion.h2>
                </StHide>
                <StHide>
-                  <h2>to make your <span>dreams</span></h2>
+                  <motion.h2 variants={titleAnim}>to make your <span>dreams</span></motion.h2>
                </StHide>
                <StHide>
-                  <h2>come true</h2>
+                  <motion.h2 variants={titleAnim}>come true</motion.h2>
                </StHide>
-            </div>
-            <p>Contact us for any photography or videography ideas that you have</p>
-            <button>Contact Us</button>
+            </motion.div>
+            <motion.p variants={fade}>Contact us for any photography or videography ideas that you have</motion.p>
+            <motion.button variants={fade}>Contact Us</motion.button>
          </StDescription>
          <StImage>
-            <img src={home1} alt="Camera man"/>
+            <motion.img variants={photoAnim} src={home1} alt="Camera man"/>
          </StImage>
+         <Wave />
       </StAbout>
    )
 }

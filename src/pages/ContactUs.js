@@ -1,10 +1,14 @@
 import React from 'react'
 
+//animations
+import { motion } from 'framer-motion';
+import { PageAnimation } from '../animation';
+
 const ContactUs = () => {
    return (
-      <div>
+      <motion.div variants={PageAnimation} initial="hidden" animate="show" exit="exit">
          <h1>Contact Us</h1>
-      </div>
+      </motion.div>
    )
 }
 

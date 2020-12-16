@@ -2,21 +2,25 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 //styled
 import styled from 'styled-components';
-//styled
+//images
 import athlete from '../img/athlete-small.png';
 import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
-
+//animations
+import { motion } from 'framer-motion';
+import { PageAnimation, fade, photoAnim, lineAnim } from '../animation';
 
 
 const OurWork = () => {
    return (
-      <StWork>
+      <StWork style={{background: "#fff"}} variants={PageAnimation} initial="hidden" animate="show" exit="exit">
          <StMovie>
-            <h2>The Athlete</h2> 
-            <div className="line"></div>
+            <motion.h2 variants={fade}>The Athlete</motion.h2> 
+            <div className="line" variants={lineAnim}></div>
             <Link to='/work/the-athlete'>
-               <img src={athlete} alt='Athlete'/>
+               <StHide>
+                  <motion.img variants={photoAnim} src={athlete} alt='Athlete'/>
+               </StHide>
             </Link>
          </StMovie>
          <StMovie>
@@ -37,7 +41,8 @@ const OurWork = () => {
    )
 }
 
-const StWork = styled.div `
+const StWork = styled(motion.div) `
+   /*background: #fff;*/
    min-height: 100vh;
    overflow: hidden;
    padding: 5rem 10rem;
@@ -50,13 +55,13 @@ const StMovie  = styled.div `
    padding-bottom: 10rem;
    .line{
       height: 0.5rem;
-      background: #cccccc;
+      background: #23dd97;
       margin-bottom: 3rem;
    }
 
    h2{
       font-size: 2rem;
-      color: #23d997;
+      color: #242424;
    }
 
    img{
@@ -64,6 +69,10 @@ const StMovie  = styled.div `
       height: 70vh;
       object-fit: cover;
    }
+`;
+
+const StHide = styled.div`
+   overflow: hidden;
 `;
 
 export default OurWork

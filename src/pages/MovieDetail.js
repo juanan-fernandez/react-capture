@@ -1,9 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import { useHistory } from 'react-router-dom';
-//style
-import styled from 'styled-components';
 //data
 import { MovieState } from './../movieState';
+//style
+import styled from 'styled-components';
+//animations
+import { motion } from 'framer-motion';
+import { PageAnimation } from '../animation';
+
+
+
 
 const MovieDetail = () => {
    const history = useHistory();
@@ -19,7 +25,7 @@ const MovieDetail = () => {
    }, [movies, url])
 
    return (
-      <>
+      <motion.div variants={PageAnimation} initial="hidden" animate="show" exit="exit">
          {movie && (
             <StDetails>
                <StHeadLine>
@@ -37,7 +43,7 @@ const MovieDetail = () => {
                </StImageDisplay>
             </StDetails>
          )}
-      </>
+      </motion.div>
    )
 }
 
