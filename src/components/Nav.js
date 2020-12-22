@@ -87,7 +87,6 @@ const StNav = styled.nav`
 const StLine = styled(motion.div)`
   height: 0.3rem;
   background: #23d997;
-  /*width: 0%;*/
   position: absolute;
   bottom: -60%;
   left: 60%;
