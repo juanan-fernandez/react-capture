@@ -15,7 +15,7 @@ export const PageAnimation = {
    },
    exit: {
       opacity: 1,
-      y:300,
+      y:-100,
       transition: {
          duration:0.5
       },
@@ -52,9 +52,9 @@ export const titleAnim = {
 
 
 export const lineAnim = {
-   hidden: { width: "0%" },
+   hidden: { width: '0%' },
    show: {
-     width: "100%",
+     width: '100%',
      transition: { duration: 1 },
    },
  };

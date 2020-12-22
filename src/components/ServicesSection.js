@@ -1,6 +1,13 @@
 import React from 'react';
 import { StDescription, StAbout, StImage } from '../style';
 import styled from 'styled-components';
+
+//custom hook
+import { useScroll } from './useScroll';
+
+//animations
+import { fade } from '../animation';
+
 //icons
 import clock from '../img/clock.svg';
 import diaphragm from '../img/diaphragm.svg';
@@ -9,8 +16,9 @@ import teamwork from '../img/teamwork.svg';
 import home2 from '../img/home2.png';
 
 const ServicesSection = () => {
+   const [element, controls] = useScroll();
    return (
-      <StServices>
+      <StServices variants={fade} animate={controls} initial='hidden' ref={element}>
          <StDescription>
             <h2>High <span>quality</span> services</h2>
             <StCards> 
@@ -64,6 +72,9 @@ const StServices = styled(StAbout) `
 const StCards = styled.div `
    display: flex;
    flex-wrap: wrap;
+   @media (max-width: 1200px) {
+      justify-content: center;
+   }
 `;
 
 const StCard = styled.div `

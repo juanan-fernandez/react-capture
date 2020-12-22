@@ -85,7 +85,11 @@ const StAwards = styled.div `
    display: flex;
    margin: 1rem 10rem;
    align-items: center;
-   justify-content: center;
+   justify-content: space-around;
+   @media (max-width: 1200px) {
+      display: block;
+      margin: 2rem 2rem;
+   }
 `;
 
 const StAward = styled.div `

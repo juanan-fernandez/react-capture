@@ -10,6 +10,9 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import OurWork from './pages/OurWork';
 import MovieDetail from './pages/MovieDetail';
+import ScrollTop from './components/ScrollTop';
+
+
 
 //Router
 import { Route, Switch, useLocation } from 'react-router-dom';
@@ -18,6 +21,7 @@ function App() {
 	const location = useLocation();
 	return (
 		<div className='App'>
+			<ScrollTop/>
 			<GlobalStyle />
 			<Nav />
 			<AnimatePresence exitBeforeEnter>
