@@ -12,8 +12,6 @@ import OurWork from './pages/OurWork';
 import MovieDetail from './pages/MovieDetail';
 import ScrollTop from './components/ScrollTop';
 
-
-
 //Router
 import { Route, Switch, useLocation } from 'react-router-dom';
 
